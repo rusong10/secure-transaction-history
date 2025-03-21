@@ -1,28 +1,59 @@
 {
-  "expo": {
-    "name": "SecureTransactionHistory",
-    "slug": "SecureTransactionHistory",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "expo": {
+        "name": "Transaction",
+        "slug": "SecureTransactionHistory",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icons/splash-icon-dark.png",
+        "userInterfaceStyle": "light",
+        "newArchEnabled": true,
+        "splash": {
+            "image": "./assets/icons/splash-icon.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#FFF"
+        },
+        "ios": {
+            "supportsTablet": true,
+            "icon": {
+                "light": "./assets/icons/Light.png",
+                "dark": "./assets/icons/Dark.png",
+                "tinted": "./assets/icons/Tinted.png"
+            },
+            "bundleIdentifier": "com.anonymous.SecureTransactionHistory",
+            "infoPlist": {
+                "NSFaceIDUsageDescription": "Allow SecureTransactionHistory to use Face ID for authentication."
+            }
+            
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/icons/adaptive-icon.png",
+                "backgroundColor": "#FFF"
+            },
+            "permissions": [
+                "android.permission.USE_BIOMETRIC",
+                "android.permission.USE_FINGERPRINT"
+            ],
+            "package": "com.anonymous.SecureTransactionHistory"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        },
+        "plugins": [
+            [
+                "expo-local-authentication",
+                {
+                    "faceIDPermission": "Allow APP to use Face ID."
+                }
+            ],
+            [
+                "expo-splash-screen",
+                {
+                    "image": "./assets/icons/splash-icon-light.png",
+                    "backgroundColor": "#FFF",
+                    "imageWidth": 200
+                }
+            ]
+        ]
     }
-  }
 }
